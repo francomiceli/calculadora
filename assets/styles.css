@@ -3,39 +3,159 @@
   src: url('/fonts/digital-7italic.ttf');
 }
 
-body {
-  background-color: #000000;
-  margin: 0px;
-  color: #282828;
-  font-family: digital7;
-  font-weight: normal;
-  font-style: normal;
+html {
+  background: #100a1c;
+  background-image:
+    radial-gradient(60% 80% ellipse at center top, #242247 0%, rgba(0,0,0,0) 100%),
+    radial-gradient(60% 60% ellipse at center bottom, #193524 0%, #100a1c 100%);
+  background-size: 300%;
+  background-attachment: fixed;
+  color: #6cacc5;
+  animation: background-start 20s infinite alternate;
 }
 
-.button {  
-  margin: 30px;
-  background-color: #39495c;
+body {
+  display: grid;
+  justify-content: space-evenly;
+  font-family: digital7;
+}
+
+.container {
+  padding-top: 45px;
+  zoom: 85%;
+  width: 500px;  
+  box-shadow: 0 8px 32px 0 rgb(0 0 0);
+  border-radius: 5px; 
+  background: rgba(255, 255, 255, 0.075);
+  backdrop-filter: blur(5px);
+  animation: button-carga 150ms ease-out forwards;
+}
+
+.display {
+  margin: 0px 57px;
+  width: 76.5%; 
+  background-color: #5afd0e;
+  font-size: 53px;
+  text-indent: 0.75em;
+  direction: rtl;
+  overflow: hidden;
+  text-overflow: clip;
+  color: black;
   border-radius: 5px;
-  font-size: 18px;
-  width: 160px;
-  height: 60px;
-  color: white;
-  padding: 20px;
-  box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
-    inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
-    inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
-  text-align: center;
-  cursor: pointer;
+  box-shadow: 1px 1px 10px 5px #000 inset;
+}
+
+.display:hover {
+  overflow: overlay;
+}
+
+#start {
+  animation: display-carga 350ms ease-in-out;
 }
 
 ul {
   list-style-type: none;
+  border-color: blue;
 }
 
 li {
   display: inline-block;
+  animation: button-carga 600ms ease-in forwards;
 }
 
-.display {
-  background-color: #66fd0e;
+.button {  
+  margin: 17px;
+  background-color: #201e4044; 
+  font-size: 25px;
+  width: 70px;
+  height: 50px;
+  color: white;
+  padding: 9px;
+  border-radius: 5px;
+  box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
+    inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
+    inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+  cursor: pointer;
 }
+
+.button::before {
+  content: '';
+  position: absolute;
+  margin-left: 21px;
+  margin-bottom: 19px;
+  border-radius: 5px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 1.2px;
+  width: 59%;
+  opacity: 0.8;
+  background-color: #5afd0e;
+  transition: transform 150ms ease-in;
+  transform: scaleX(0);
+}
+
+.button:hover::before,
+.button:focus::before {
+  transform: scaleX(1);
+}
+
+.button:active {
+  background-color: #5afd0e;
+  animation: button-active 150ms forwards;
+}
+
+@keyframes display-carga {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+  30% {
+    transform: translateY(85%);
+  }
+  70% {
+    opacity: 0.5;
+  }
+  85% {
+    transform: translateY(-5%);
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes button-carga {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  80% {
+    transform: scale(1.05);
+  }
+  90% {
+    transform: scale(0.95);
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+}
+
+@keyframes button-active {
+  0% {
+    opacity: 0.2;
+  }
+  100% {
+    opacity: 0.7;
+  }
+}
+
+@keyframes background-start {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
+} 

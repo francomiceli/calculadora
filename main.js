@@ -1,19 +1,21 @@
 const app = Vue.createApp({
   data() {
     return {
-      teclas: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, '+', '-', '*', '/', '(', ')', '.', '^', 'sqrt', 'sin', 'cos', 'tan', 'deg'],
+      teclas: ['sqrt', '^', 'sin', 'cos', 'tan', 'deg', '[', ']', '(', ')', 7, 8, 9, '*', 4, 5, 6, '-', 1, 2, 3, '+', 0, '.', '/'],
       igual: '=',
       borrar: 'DEL',
       borrarTodo: 'AC',
-      display: ''
+      display: '',
+      displayStart: ''
     }
   },
   methods: {
-    agregar(a) {
-      this.display += a;
-    },
     evaluar(x) {
       this.display = math.evaluate(x);
+    },
+    agregar(a) {
+      this.display += a;
+      this.displayStart += a;
     }
   }
 });

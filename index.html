@@ -11,22 +11,13 @@
 
 <body>
 
-  <div id="app">
+  <div class="container" id="app">
 
-    <div class="display" v-if="display === ''">Total: 0</div>
-    <div class="display" v-else>Total: {{ display }}</div>
+    <div class="display" id="start" v-if="display === '' && displayStart === ''">0</div>
+    <div class="display" v-else-if="display === ''">0</div>
+    <div class="display scroller" v-else>{{ display }}</div>
 
     <ul>
-      <li v-for="tecla in teclas">
-        <button class="button" @click="agregar(`${tecla}`)">
-          {{ tecla }}
-        </button>
-      </li>
-      <li>
-        <button class="button" @click="evaluar(display)">
-          {{ igual }}
-        </button>
-      </li>
       <li>
         <button class="button" @click="display = display.slice(0, -1)">
           {{ borrar }}
@@ -37,16 +28,24 @@
           {{ borrarTodo }}
         </button>
       </li>
+      <li v-for="tecla in teclas">
+        <button class="button" @click="agregar(`${tecla}`)">
+          {{ tecla }}
+        </button>
+      </li>
+      <li>
+        <button class="button" @click="evaluar(display)">
+          {{ igual }}
+        </button>
+      </li>
     </ul>
   </div>
 
-  <!-- Import App -->
   <script src="./main.js"></script>
-
-  <!-- Mount App -->
   <script>
     const mountedApp = app.mount('#app')
   </script>
+
 </body>
 
 </html>
