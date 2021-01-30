@@ -3,35 +3,41 @@
 
 <head>
   <meta charset="UTF-8" />
-  <title>Vue Mastery</title>
-  <!-- Import Styles -->
+  <title>Calculadora</title>
   <link rel="stylesheet" href="./assets/styles.css" />
-  <!-- Import Vue.js -->
   <script src="https://unpkg.com/vue@next"></script>
+  <script src="https://unpkg.com/mathjs/lib/browser/math.js"></script>
 </head>
 
 <body>
+
   <div id="app">
-    <div class="resultado"> Resultado: {{ resultado }} </div>
+
+    <div class="display" v-if="display === ''">Total: 0</div>
+    <div class="display" v-else>Total: {{ display }}</div>
+
     <ul>
-      <li v-for="numero in numeros">
-        <button class="button" v-on:click="resultado += `${numero}`">
-          {{ numero }}
+      <li v-for="tecla in teclas">
+        <button class="button" @click="agregar(`${tecla}`)">
+          {{ tecla }}
+        </button>
+      </li>
+      <li>
+        <button class="button" @click="evaluar(display)">
+          {{ igual }}
+        </button>
+      </li>
+      <li>
+        <button class="button" @click="display = display.slice(0, -1)">
+          {{ borrar }}
+        </button>
+      </li>
+      <li>
+        <button class="button" @click="display = ''">
+          {{ borrarTodo }}
         </button>
       </li>
     </ul>
-
-    <!--    resultado += `${numero}` <button :click="agregar">1</button> 
-    <button :click="agregar">2</button>
-    <button :click="agregar">3</button>
-    <button :click="agregar">4</button>
-    <button :click="agregar">5</button>
-    <button :click="agregar">6</button>
-    <button :click="agregar">7</button>
-    <button :click="agregar">8</button>
-    <button :click="agregar">9</button>
-    <button :click="agregar" :disabled="">AC</button> 
- -->
   </div>
 
   <!-- Import App -->

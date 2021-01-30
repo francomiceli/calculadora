@@ -1,0 +1,41 @@
+@font-face {
+  font-family: 'digital7';
+  src: url('/fonts/digital-7italic.ttf');
+}
+
+body {
+  background-color: #000000;
+  margin: 0px;
+  color: #282828;
+  font-family: digital7;
+  font-weight: normal;
+  font-style: normal;
+}
+
+.button {  
+  margin: 30px;
+  background-color: #39495c;
+  border-radius: 5px;
+  font-size: 18px;
+  width: 160px;
+  height: 60px;
+  color: white;
+  padding: 20px;
+  box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
+    inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
+    inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
+  text-align: center;
+  cursor: pointer;
+}
+
+ul {
+  list-style-type: none;
+}
+
+li {
+  display: inline-block;
+}
+
+.display {
+  background-color: #66fd0e;
+}
