@@ -15,16 +15,16 @@
 
     <div class="display" id="start" v-if="display === '' && displayStart === ''">0</div>
     <div class="display" v-else-if="display === ''">0</div>
-    <div class="display scroller" v-else>{{ display }}</div>
+    <div class="display" ref="resultado" v-else>{{ display }}</div>
 
     <ul>
       <li>
-        <button class="button" @click="display = display.slice(0, -1)">
-          {{ borrar }}
+        <button class="button" @click="limpiarUno">
+          {{ borrarUno }}
         </button>
       </li>
       <li>
-        <button class="button" @click="display = ''">
+        <button class="button" @click="limpiarTodo">
           {{ borrarTodo }}
         </button>
       </li>

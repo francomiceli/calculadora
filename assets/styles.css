@@ -35,6 +35,7 @@ body {
   margin: 0px 57px;
   width: 76.5%; 
   background-color: #5afd0e;
+  block-size: 53px;
   font-size: 53px;
   text-indent: 0.75em;
   direction: rtl;
@@ -72,10 +73,16 @@ li {
   color: white;
   padding: 9px;
   border-radius: 5px;
-  box-shadow: inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
+  box-shadow: 
+    0 8px 32px 0 rgba(0, 0, 0, 0.25),
+    inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
     inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
     inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
   cursor: pointer;
+}
+
+.resultado {
+  animation: agrandar 300ms;
 }
 
 .button::before {
@@ -90,7 +97,7 @@ li {
   height: 1.2px;
   width: 59%;
   opacity: 0.8;
-  background-color: #5afd0e;
+  background-color: #0abe52;
   transition: transform 150ms ease-in;
   transform: scaleX(0);
 }
@@ -101,8 +108,8 @@ li {
 }
 
 .button:active {
-  background-color: #5afd0e;
-  animation: button-active 150ms forwards;
+  background-color: #2d5e40;
+  animation: button-active 50ms forwards;
 }
 
 @keyframes display-carga {
@@ -144,10 +151,10 @@ li {
 
 @keyframes button-active {
   0% {
-    opacity: 0.2;
+    opacity: 0.8;
   }
   100% {
-    opacity: 0.7;
+    opacity: 1;
   }
 }
 
@@ -159,3 +166,12 @@ li {
     background-position: right;
   }
 } 
+
+@keyframes agrandar {
+  0% {
+    color: #5afd0e;
+  }
+  100% {
+    color:black;
+  }
+}
