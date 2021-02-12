@@ -1,28 +1,53 @@
 <template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+  <calculadora />
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Calculadora from "./components/Calculadora.vue";
 
 export default {
-  name: 'App',
   components: {
-    HelloWorld
-  }
-}
+    calculadora: Calculadora,
+  },
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@font-face {
+  font-family: "digital7";
+  src: url("./fonts/digital-7italic.ttf");
+}
+
+* {
+  transform: translateZ(0);
+}
+
+html {
+  background: #100a1c;
+  background-image: radial-gradient(
+      60% 80% ellipse at center top,
+      #242247 0%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    radial-gradient(60% 60% ellipse at center bottom, #193524 0%, #100a1c 100%);
+  background-size: 300%;
+  background-attachment: fixed;
+  color: #6cacc5;
+  animation: background-start 20s infinite alternate;
+}
+
+body {
+  display: grid;
+  justify-content: space-evenly;
+  font-family: digital7;
+}
+
+@keyframes background-start {
+  0% {
+    background-position: left;
+  }
+  100% {
+    background-position: right;
+  }
 }
 </style>
