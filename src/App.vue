@@ -1,13 +1,18 @@
 <template>
-  <calculadora />
+  <div id="app">
+    <div id="nav">
+      <cabecera />
+    </div>
+    <router-view />
+  </div>
 </template>
 
 <script>
-import Calculadora from "./components/Calculadora.vue";
+import Cabecera from "./components/Cabecera.vue";
 
 export default {
   components: {
-    calculadora: Calculadora,
+    cabecera: Cabecera,
   },
 };
 </script>
@@ -37,8 +42,6 @@ html {
 }
 
 body {
-  display: grid;
-  justify-content: space-evenly;
   font-family: digital7;
 }
 
@@ -49,5 +52,15 @@ body {
   100% {
     background-position: right;
   }
+}
+
+#nav a {
+  font-family: Arial;
+  text-decoration: none;
+  color: #00be7f;
+}
+
+#nav a.router-link-exact-active {
+  color: #00be7f;
 }
 </style>

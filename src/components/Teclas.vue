@@ -2,11 +2,11 @@
   <div class="button-grid">
     <button class="button">{{ tecla }}</button>
   </div>
-</template> 
+</template>
 
 <script>
 export default {
-  props: ["tecla"],
+  props: ["tecla"]
 };
 </script>
 

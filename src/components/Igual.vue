@@ -2,11 +2,11 @@
   <div class="button-grid">
     <button class="button">{{ igual }}</button>
   </div>
-</template> 
+</template>
 
 <script>
 export default {
-  props: ["igual"],
+  props: ["igual"]
 };
 </script>
 

@@ -2,11 +2,11 @@
   <div class="button-grid">
     <button class="button">{{ borraruno }}</button>
   </div>
-</template> 
+</template>
 
 <script>
 export default {
-  props: ["borraruno"],
+  props: ["borraruno"]
 };
 </script>
 

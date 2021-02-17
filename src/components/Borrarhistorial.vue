@@ -1,36 +1,33 @@
 <template>
-  <div class="button-grid">
-    <button class="button">{{ borrartodo }}</button>
+  <div>
+    <button class="button">{{ borrarhistorial }}</button>
   </div>
 </template>
 
 <script>
 export default {
-  props: ["borrartodo"]
+  props: ["borrarhistorial"],
 };
 </script>
 
 <style scoped>
-.button {
+button {
   display: inline-block;
-  animation: carga 600ms ease-in;
-  margin: 17px;
-  background-color: #a7010196;
-  font-size: 25px;
-  width: 70px;
+  margin-top: -30px;
+  margin-bottom: -20px;
+  margin-left: 300px;
+  animation: carga 300ms ease-in;
+  background-color: #201e4044;
+  font-size: 18px;
+  width: 250px;
   height: 50px;
   color: white;
-  padding: 9px;
   border-radius: 5px;
   box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.25),
     inset 0 -0.6em 1em -0.35em rgba(0, 0, 0, 0.17),
     inset 0 0.6em 2em -0.3em rgba(255, 255, 255, 0.15),
     inset 0 0 0em 0.05em rgba(255, 255, 255, 0.12);
   cursor: pointer;
-}
-
-.button-grid {
-  display: inline-flex;
 }
 
 .button::before {
@@ -56,23 +53,6 @@ export default {
   background-color: #2d5e40;
   animation: carga none !important;
   animation: button-active 50ms forwards;
-}
-
-@keyframes carga {
-  0% {
-    transform: scale(0.2);
-    opacity: 0;
-  }
-  80% {
-    transform: scale(1.05);
-  }
-  90% {
-    transform: scale(0.95);
-  }
-  100% {
-    transform: scale(1);
-    opacity: 0.8;
-  }
 }
 
 @keyframes button-active {
